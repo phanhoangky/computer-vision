@@ -1,0 +1,42 @@
+:host {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  // background-color: rgba(25, 25, 25, 0.7);
+  .modal-container {
+    width: 100%;
+    height: auto;
+    background-color: rgba(10, 188, 232, 0.7);
+    border-radius: 1rem;
+    padding: 1.5rem;
+    overflow: hidden;
+    header {
+      border-bottom: 2px solid black;
+      padding-bottom: 1rem;
+    }
+    main {
+      padding: 1rem 0;
+    }
+    footer {
+      border-top: 2px solid black;
+      padding-top: 1rem;
+    }
+  }
+  &::before {
+    content: "";
+
+  }
+  .modal-header {
+  }
+  @media only screen and (min-width: 760px) {
+    .modal-container {
+      width: 60%;
+    }
+  }
+}

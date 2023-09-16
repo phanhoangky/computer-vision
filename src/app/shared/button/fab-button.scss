@@ -1,0 +1,15 @@
+@import "src/app/shared/styles/_mixin.scss";
+@import 'src/app/shared/button/_button-type.scss';
+@import 'src/app/shared/button/_button-theme.scss';
+app-button[fab] {
+  border-radius: 50%;
+  min-height: min-content;
+  aspect-ratio: 1 / 1;
+  padding: 0.5rem;
+  background-color: var(--primary-transparent);
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  @include ripple;
+  @extend %app-button-theme;
+}

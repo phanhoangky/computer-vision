@@ -1,0 +1,23 @@
+:host {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: row;
+  img {
+    object-fit: contain;
+  }
+
+  .user-infor {
+    height: 100%;
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    margin-right: 2rem;
+    gap: 2rem;
+    fa-icon {
+      font-size: 3.5rem;
+      // color: var(--primary-text-color);
+    }
+  }
+
+}

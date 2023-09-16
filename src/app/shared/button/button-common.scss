@@ -1,0 +1,32 @@
+app-button {
+  box-shadow: 0;
+  color: var(--primary-text-color);
+  &:active {
+    animation: box-shadow-spread .3s ease forwards;
+  }
+
+  &.success {
+    background-color: var(--app-button-sucess-bg-color);
+    color: var(--app-button-sucess-text-color);
+  }
+
+  &.danger {
+    background-color: var(--app-button-danger-bg-color);
+    color: var(--app-button-danger-text-color);
+  }
+
+  &.warning {
+    background-color: var(--app-button-warning-bg-color);
+    color: var(--app-button-warning-text-color);
+  }
+}
+
+@keyframes box-shadow-spread {
+  from {
+    box-shadow: 0;
+  }
+
+  to {
+    box-shadow: 0 0 5px 10px rgba(24, 42, 24, .3);
+  }
+}

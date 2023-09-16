@@ -1,0 +1,42 @@
+@import "src/app/shared/styles/_mixin.scss";
+@import "src/app/shared/button/_button-type.scss";
+@import "src/app/shared/button/_button-theme.scss";
+
+app-button:not([fab]) {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primary-transparent);
+  display: inline-block;
+  border-radius: 5px;
+  position: relative;
+  outline: none;
+  border: none;
+  transition: all 0.5s linear;
+  box-shadow: 4px 4px 5px 2px var(--primary-shadow-color);
+  @include ripple;
+}
+
+app-button,
+app-button:not([fab]),
+app-button[fab] {
+  &.success {
+    background-color: var(--app-button-sucess-bg-color);
+    color: var(--app-button-sucess-text-color);
+  }
+
+  &[danger] {
+    // background-color: var(--app-button-danger-bg-color);
+    background: red;
+    color: var(--app-button-danger-text-color);
+  }
+
+  &.warning {
+    background-color: var(--app-button-warning-bg-color);
+    color: var(--app-button-warning-text-color);
+  }
+}
+
+app-button[fab] {
+  &[danger] {
+    background: red !important;
+  }
+}

@@ -1,0 +1,50 @@
+@mixin boxshadow {
+  box-shadow: 1px 1px 4px var(--secondary-light);
+  border-radius: 10px;
+  padding: 1rem;
+}
+
+:host {
+  .image {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+    @include boxshadow;
+    height: 50rem;
+    img {
+      width: auto;
+      max-height: 100%;
+    }
+  }
+
+  .detail {
+    width: 100%;
+    height: calc(100% - 50rem);
+
+    overflow-y: scroll;
+    @include boxshadow;
+  }
+
+  // custom scrollbar
+  /* width */
+  ::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 0.5rem var(--secondary-light);
+    border-radius: 0.5rem;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-light);
+    border-radius: 0.5rem;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-transparent);
+  }
+}

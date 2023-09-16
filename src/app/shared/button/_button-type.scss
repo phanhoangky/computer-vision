@@ -1,0 +1,19 @@
+@import "button-theme";
+%app-button-theme {
+  app-button {
+    &.success {
+      background-color: var(--app-button-sucess-bg-color);
+      color: var(--app-button-sucess-text-color);
+    }
+
+    &.danger {
+      background-color: var(--app-button-danger-bg-color);
+      color: var(--app-button-danger-text-color);
+    }
+
+    &.warning {
+      background-color: var(--app-button-warning-bg-color);
+      color: var(--app-button-warning-text-color);
+    }
+  }
+}

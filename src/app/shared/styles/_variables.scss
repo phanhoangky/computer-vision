@@ -1,0 +1,35 @@
+:root {
+  // PRIMARY
+  --primary: rgb(8, 158, 238);
+  --primary-light: rgb(1, 200, 255);
+  --primary-dark: rgb(1, 98, 255);
+  --primary-text-color: rgb(255, 255, 255);
+  // SECONDARY
+  --secondary: rgb(255, 255, 255);
+  --secondary-light: rgb(204, 204, 204);
+  --secondary-dark: rgb(57, 57, 57);
+  // THIRD
+  --third-dark-background-color: #1f273a;
+  // TRANSPARENT
+
+  --primary-transparent: rgba(8, 158, 238, 0.6);
+  --primary-dark-transparent: rgba(24, 24, 24, 0.5);
+  // SHADOW
+  --primary-shadow-color: rgba(25, 25, 25, 0.4);
+
+  // SIDE MENU
+  &.dark-theme {
+    // PRIMARY
+    --primary: rgb(8, 158, 238);
+    --primary-light: rgb(1, 200, 255);
+    --primary-dark: rgb(1, 98, 255);
+    --primary-color: rgb(255, 255, 255);
+    // SECONDARY
+    --secondary: rgb(255, 255, 255);
+    --secondary-light: rgb(204, 204, 204);
+    --secondary-dark: rgb(57, 57, 57);
+    // TRANSPARENT
+
+    --primary-transparent: rgba(8, 158, 238, 1);
+  }
+}

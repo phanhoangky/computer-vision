@@ -1,0 +1,26 @@
+<ng-container *ngIf="value">
+  <div class="image">
+    <img [src]="value.img_path" alt="" />
+  </div>
+  <div class="detail">
+    <app-form-control direction="vertical">
+      <label for="">Serial : </label>
+      <input type="text" [value]="value.serial" readonly/>
+    </app-form-control>
+
+    <app-form-control direction="vertical">
+      <label for="">Status : </label>
+      <input type="text" [value]="value.status" readonly/>
+    </app-form-control>
+
+    <app-form-control direction="vertical">
+      <label for="">Date : </label>
+      <input type="text" [value]="value.date" readonly/>
+    </app-form-control>
+
+    <app-form-control direction="vertical">
+      <label for="">Time : </label>
+      <input type="text" [value]="value.time" readonly/>
+    </app-form-control>
+  </div>
+</ng-container>

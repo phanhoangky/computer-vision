@@ -1,0 +1,19 @@
+:host {
+  width: 100%;
+  height: 100%;
+  .main-container {
+    .title {
+      padding-bottom: 4rem;
+    }
+
+    .content {
+
+      .mat-mdc-header-row,.mat-mdc-row {
+        font-size: 2rem;
+      }
+      .selected {
+        background-color: #e4e4e4;
+      }
+    }
+  }
+}

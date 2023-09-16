@@ -7,4 +7,17 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'computer-vision';
+  isModal: boolean = true;
+  isDrawer: boolean = false;
+
+
+  closeDrawer(event: boolean) {
+    this.isDrawer = !this.isDrawer
+    console.log("Close, event");
+
+  }
+
+  closeModal(event: boolean) {
+    this.isModal = false;
+  }
 }

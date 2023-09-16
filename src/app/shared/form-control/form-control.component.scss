@@ -1,0 +1,54 @@
+:host{
+  width: 100%;
+  // background-color: var(--secondary-light);
+  padding: 0.5rem;
+
+  &[direction="vertical"]{
+    display: flex;
+  }
+
+  .form-control-label{
+    width: 12rem;
+    height: 100%;
+    margin-bottom: 0.5rem;
+    label{
+      display: inline-block;
+      color: red;
+    }
+  }
+
+  .form-control-content {
+    width: calc(100% - 12rem);
+    height: 100%;
+
+    ::ng-deep input, ::ng-deep textarea{
+      width: 100%;
+      border-radius: 0.5rem;
+      border: 1px solid var(--secondary-light);
+      outline: none;
+      padding: 0.5rem 1rem;
+      font-size: 2rem;
+
+      &:focus{
+        border-color: var(--primary);
+        transition: 0.3s;
+      }
+
+      &[readonly]{
+        border: 1px solid #f1f3f4;
+        cursor: default;
+        background-color: #f1f3f4;
+      }
+    }
+
+
+
+    ::ng-deep input{
+      height: 3.5rem;
+    }
+  }
+
+  &:not(:last-child){
+    margin-bottom: 2rem;
+  }
+}

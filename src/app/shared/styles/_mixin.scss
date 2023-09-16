@@ -1,0 +1,28 @@
+@mixin ripple {
+  position: relative;
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 200%;
+    aspect-ratio: 1 / 1;
+    opacity: 0;
+    transition: width .5s, height .5s, opacity .5s;
+    background-color: #fff;
+  }
+  &:active {
+    transform: translateY(2px);
+    transition: transform .1s linear;
+  }
+  &:active::before {
+    width: 0;
+    height: 0;
+    opacity: .5;
+    transition: width 0s, height 0s, opacity 0s;
+  }
+}
