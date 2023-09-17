@@ -7,9 +7,8 @@ import { RefrigeratorDetailModel } from 'src/app/shared/models/refrigerator.mode
   styleUrls: ['./refrigerator-detail.component.scss'],
 })
 export class RefrigeratorDetailComponent implements OnChanges {
-  @Input('input') value: RefrigeratorDetailModel;
-  constructor(){
-  }
+  @Input('input') value?: RefrigeratorDetailModel;
+  constructor() {}
 
   ngOnChanges(): void {
     console.log(this.value);

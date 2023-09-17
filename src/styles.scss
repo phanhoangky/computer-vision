@@ -11,6 +11,26 @@
 html {
   font-size: 62.5%;
 
+  /* width */
+  ::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: var(--secondary);
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: var(--secondary-dark);
+    border-radius: 9999px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-light);
+  }
 }
 body {
   font-size: 2rem;

@@ -15,7 +15,6 @@ import { DashboardComponent } from './dashboard.component';
     NavigateBarComponent,
     SideMenuComponent,
     FooterComponent,
-    SummaryComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule, MaterialModule],
 })

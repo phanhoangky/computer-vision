@@ -1,6 +1,30 @@
-<img src="assets/images/logo-samsung-electronics-business-television-samsung.png" alt="Logo">
+<img
+  src="assets/images/logo-samsung-electronics-business-television-samsung.png"
+  alt="Logo"
+/>
 <section class="user-infor">
-
-  <fa-icon icon="bell"></fa-icon>
-  <fa-icon icon="circle-user"></fa-icon>
+  <div class="icon">
+    <fa-icon icon="bell"></fa-icon>
+  </div>
+  <div class="icon" [triggerPopverMenu]="menu">
+    <fa-icon icon="circle-user"></fa-icon>
+  </div>
 </section>
+
+<popover-menu #menu>
+  <popover-menu-item>
+    <fa-icon icon="ticket" prefix></fa-icon>
+    <span>This is a body</span>
+    <fa-icon icon="ticket" suffix></fa-icon>
+  </popover-menu-item>
+  <popover-menu-item>
+    <fa-icon icon="ticket" prefix></fa-icon>
+    <span>This is a body</span>
+    <fa-icon icon="ticket" suffix></fa-icon>
+  </popover-menu-item>
+  <popover-menu-item>
+    <fa-icon icon="ticket" prefix></fa-icon>
+    <span>This is a body</span>
+    <fa-icon icon="ticket" suffix></fa-icon>
+  </popover-menu-item>
+</popover-menu>
