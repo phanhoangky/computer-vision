@@ -1,6 +1,6 @@
 :host {
   display: grid;
-  grid-template-columns: 0 1fr;
+  grid-template-columns: minmax(5rem, 20vw) 1fr;
   grid-template-rows: 10rem 1fr 5rem;
   grid-template-areas:
     "nav nav"

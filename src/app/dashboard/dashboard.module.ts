@@ -8,6 +8,8 @@ import { FooterComponent } from './footer/footer.component';
 import { SummaryComponent } from './summary/summary.component';
 import { MaterialModule } from '../material-shared/materials.module';
 import { DashboardComponent } from './dashboard.component';
+import { SkeletonLoadingService } from '../shared/skeleton-loading/skeleton-loading.service';
+import { RefrigeratorService } from './refrigerator/services/refrigerator.service';
 
 @NgModule({
   declarations: [
@@ -17,5 +19,6 @@ import { DashboardComponent } from './dashboard.component';
     FooterComponent,
   ],
   imports: [CommonModule, DashboardRoutingModule, SharedModule, MaterialModule],
+  providers: [SkeletonLoadingService, RefrigeratorService],
 })
 export class DashboardModule {}

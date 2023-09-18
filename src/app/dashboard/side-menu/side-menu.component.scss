@@ -20,6 +20,7 @@
   .menu {
     list-style-type: none;
     .menu-item {
+      position: relative;
       padding: 3rem 2rem;
       background: linear-gradient(
         90deg,
@@ -33,22 +34,32 @@
       fa-icon {
         padding-right: 1rem;
       }
-      &:focus {
-        // background: linear-gradient(90deg, rgba(27,229,169,0.804359243697479) 0%, rgba(27,229,169,0.4990371148459384) 50%, rgba(27,229,169,0) 100%);
-        // background-size: 100%;
+      &::before {
+        content: "";
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: 0;
+        background-color: var(--secondary);
+        transition: padding 0.3s ease;
+      }
+      &.selected {
         animation: item-focus 0.3s ease forwards;
+        &::before {
+          padding: 0.5rem;
+        }
       }
     }
   }
-}
 
+  &.collapse {
+  }
+}
 @keyframes item-focus {
   from {
     background-position: -400% 0%;
-    border-left: 0;
   }
   to {
     background-position: -465% 0%;
-    border-left: 3px solid var(--primary-text-color);
   }
 }

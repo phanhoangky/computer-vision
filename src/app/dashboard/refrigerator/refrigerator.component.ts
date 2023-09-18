@@ -1,6 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as moment from 'moment';
-import { RefrigeratorDetailModel, RefrigeratorModel } from 'src/app/shared/models/refrigerator.model';
+import {
+  RefrigeratorDetailModel,
+  RefrigeratorModel,
+} from 'src/app/shared/models/refrigerator.model';
+import { RefrigeratorService } from './services/refrigerator.service';
+import { SkeletonLoadingService } from 'src/app/shared/skeleton-loading/skeleton-loading.service';
 
 @Component({
   selector: 'app-refrigerator',
@@ -8,6 +13,7 @@ import { RefrigeratorDetailModel, RefrigeratorModel } from 'src/app/shared/model
   styleUrls: ['./refrigerator.component.scss'],
 })
 export class RefrigeratorComponent {
+  static readonly TAG = 'RefrigeratorComponent: ';
   displayedColumns: string[] = ['serial', 'status', 'date', 'time'];
   exampleDatabase: any;
 
@@ -26,6 +32,8 @@ export class RefrigeratorComponent {
     },
   ];
 
+  pokemon: any = [];
+
   selectedRowSerial: string = '';
 
   dataSource: RefrigeratorDetailModel[] = [];
@@ -33,13 +41,30 @@ export class RefrigeratorComponent {
   isDrawer: boolean = false;
   selectedRowData: any;
 
-  constructor() {
+  constructor(
+    private refService: RefrigeratorService,
+    private loadingService: SkeletonLoadingService
+  ) {
+    console.log(RefrigeratorComponent.TAG, loadingService.id);
+
     this.dataSource = this.mockupDate.map((e: RefrigeratorModel) => {
-        return {
-          ...e,
-          date: moment(e.dateTime).format('yyyy-mm-DD'),
-          time: moment(e.dateTime).format('HH:mm:ss'),
-        } as RefrigeratorDetailModel;
+      return {
+        ...e,
+        date: moment(e.dateTime).format('yyyy-mm-DD'),
+        time: moment(e.dateTime).format('HH:mm:ss'),
+      } as RefrigeratorDetailModel;
+    });
+  }
+
+  ngOnInit(): void {
+    //Called after the constructor, initializing input properties, and the first call to ngOnChanges.
+    //Add 'implements OnInit' to the class.
+    console.log(this.loadingService.loading$.getValue());
+
+    this.refService.getPokemon();
+    this.refService.pokemon$.subscribe((data) => {
+      this.pokemon = data.results;
+      console.log('Pokenmon', this.pokemon);
     });
   }
 
@@ -47,7 +72,7 @@ export class RefrigeratorComponent {
     if (value) {
       this.isDrawer = true;
       this.selectedRowData = value;
-      this.selectedRowSerial = value.serial
+      this.selectedRowSerial = value.serial;
     }
   }
 }

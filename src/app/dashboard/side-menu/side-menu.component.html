@@ -1,17 +1,38 @@
 <section class="title">
-  <img src="assets/images/CV.gif" alt="">
+  <img src="assets/images/CV.gif" alt="" />
 </section>
 <ul class="menu">
-  <li class="menu-item" tabindex="0">
-    <fa-icon icon="camera-retro"></fa-icon> <span>REF</span>
+  <li
+    class="menu-item"
+    tabindex="0"
+    routerLink="./"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    <fa-icon icon="camera-retro"></fa-icon> <span>SUMMARY</span>
   </li>
-  <li class="menu-item" tabindex="0">
-    <fa-icon icon="hippo"></fa-icon><span>SHOE</span>
+  <li
+    class="menu-item"
+    tabindex="0"
+    routerLink="./refrigerator"
+    routerLinkActive="selected"
+  >
+    <fa-icon icon="hippo"></fa-icon><span>REF</span>
   </li>
-  <li class="menu-item" tabindex="0">
+  <li
+    class="menu-item"
+    tabindex="0"
+    routerLink="./vacuum"
+    routerLinkActive="selected"
+  >
     <fa-icon icon="bolt"></fa-icon><span>VACUUM</span>
   </li>
-  <li class="menu-item" tabindex="0">
+  <li
+    class="menu-item"
+    tabindex="0"
+    routerLink="./dishwasher"
+    routerLinkActive="selected"
+  >
     <fa-icon icon="binoculars"></fa-icon><span>DISHWASHER</span>
   </li>
 </ul>

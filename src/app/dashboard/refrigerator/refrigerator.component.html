@@ -2,43 +2,67 @@
   <div class="title">
     <h3>Refrigerator List</h3>
   </div>
-  <div class="content">
-    <div class="example-container mat-elevation-z8">
-      <div class="example-table-container">
-        <table mat-table [dataSource]="dataSource" class="example-table"
-               matSort matSortActive="time" matSortDisableClear matSortDirection="desc">
+  <skeleton-loading>
+    <div class="content">
+      <div class="example-container mat-elevation-z8">
+        <div class="example-table-container">
+          <table
+            mat-table
+            [dataSource]="dataSource"
+            class="example-table"
+            matSort
+            matSortActive="time"
+            matSortDisableClear
+            matSortDirection="desc"
+          >
+            <ng-container matColumnDef="serial">
+              <th mat-header-cell *matHeaderCellDef>Serial</th>
+              <td mat-cell *matCellDef="let row">{{ row.serial }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="serial">
-            <th mat-header-cell *matHeaderCellDef>Serial</th>
-            <td mat-cell *matCellDef="let row">{{row.serial}}</td>
-          </ng-container>
+            <ng-container matColumnDef="status">
+              <th mat-header-cell *matHeaderCellDef>Status</th>
+              <td mat-cell *matCellDef="let row">{{ row.status }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="status">
-            <th mat-header-cell *matHeaderCellDef>Status</th>
-            <td mat-cell *matCellDef="let row">{{row.status}}</td>
-          </ng-container>
+            <ng-container matColumnDef="date">
+              <th mat-header-cell *matHeaderCellDef>Date</th>
+              <td mat-cell *matCellDef="let row">{{ row.date }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="date">
-            <th mat-header-cell *matHeaderCellDef>Date</th>
-            <td mat-cell *matCellDef="let row">{{row.date }}</td>
-          </ng-container>
+            <ng-container matColumnDef="time">
+              <th
+                mat-header-cell
+                *matHeaderCellDef
+                mat-sort-header
+                disableClear
+              >
+                Time
+              </th>
+              <td mat-cell *matCellDef="let row">{{ row.time }}</td>
+            </ng-container>
 
-          <ng-container matColumnDef="time">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header disableClear>
-              Time
-            </th>
-            <td mat-cell *matCellDef="let row">{{row.time}}</td>
-          </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr
+              mat-row
+              *matRowDef="let row; columns: displayedColumns"
+              [ngClass]="{
+                selected: selectedRowSerial == row.serial && isDrawer
+              }"
+              (click)="selectedRow(row)"
+            ></tr>
+          </table>
+        </div>
 
-          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-          <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'selected': selectedRowSerial == row.serial && isDrawer}" (click)="selectedRow(row)"></tr>
-        </table>
+        <mat-paginator
+          [length]="2"
+          [pageSize]="1"
+          aria-label="Select page of GitHub search results"
+        ></mat-paginator>
+        <!-- <app-paginator></app-paginator> -->
       </div>
-
-      <mat-paginator [length]="2" [pageSize]="1" aria-label="Select page of GitHub search results"></mat-paginator>
-      <!-- <app-paginator></app-paginator> -->
     </div>
-  </div>
+  </skeleton-loading>
 </div>
 
 <app-drawer *ngIf="isDrawer" (close)="isDrawer = false">

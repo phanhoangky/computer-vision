@@ -28,6 +28,9 @@ import { PopoverMenuItemComponent } from './popover-menu/popover-menu-item/popov
 import { PopoverMenuDirective } from './directives/popover-menu.directive';
 import { ListComponent } from './list/list.component';
 import { ListItemComponent } from './list/list-item/list-item.component';
+import { SkeletonLoadingComponent } from './skeleton-loading/skeleton-loading.component';
+import { SkeletonLoadingService } from './skeleton-loading/skeleton-loading.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -45,8 +48,9 @@ import { ListItemComponent } from './list/list-item/list-item.component';
     PopoverMenuItemComponent,
     ListComponent,
     ListItemComponent,
+    SkeletonLoadingComponent,
   ],
-  imports: [CommonModule, FontAwesomeModule],
+  imports: [CommonModule, HttpClientModule, FontAwesomeModule],
   exports: [
     ButtonComponent,
     ModalComponent,
@@ -61,6 +65,7 @@ import { ListItemComponent } from './list/list-item/list-item.component';
     PopoverMenuDirective,
     ListComponent,
     ListItemComponent,
+    SkeletonLoadingComponent,
     FontAwesomeModule,
   ],
 })
