@@ -1,8 +1,10 @@
-<section class="drawer-container">
+<section class="drawer-container" [@drawerContainerSlide]>
   <header>
     <ng-content select="[header]"></ng-content>
   </header>
-  <app-button fab danger class="close-btn danger" (click)="closeDrawer()">X</app-button>
+  <app-button fab danger class="close-btn danger" (click)="closeDrawer()"
+    >X</app-button
+  >
   <main>
     <ng-content></ng-content>
   </main>

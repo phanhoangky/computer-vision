@@ -1,18 +1,38 @@
 import {
   animate,
+  animateChild,
+  group,
   query,
+  sequence,
   style,
   transition,
   trigger,
 } from '@angular/animations';
 
-export const drawerSlide = trigger('modalToggle', [
+export const drawerSlide = trigger('drawerSlide', [
+  transition(':enter', [
+    style({ opacity: 0 }),
+    sequence([
+      animate('0.3s ease-in', style({ opacity: 1 })),
+      query('@drawerContainerSlide', [animateChild()]),
+    ]),
+  ]),
+  transition(':leave', [
+    style({ opacity: 1 }),
+    group([
+      query('@drawerContainerSlide', [animateChild()]),
+      animate('0.3s ease-out', style({ opacity: 0 })),
+    ]),
+  ]),
+]);
+
+export const drawerContainerSlide = trigger('drawerContainerSlide', [
   transition(':enter', [
     style({ transform: 'translate(100%, 0)' }),
     animate('0.3s ease-in', style({ transform: 'translate(0, 0)' })),
   ]),
   transition(':leave', [
-    style({ transform: '*', 'box-shadow': '*' }),
+    style({ transform: '*' }),
     animate('0.3s ease-out', style({ transform: 'translate(100%, 0)' })),
   ]),
 ]);
