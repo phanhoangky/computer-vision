@@ -2,15 +2,24 @@
   src="assets/images/logo-samsung-electronics-business-television-samsung.png"
   alt="Logo"
 />
-<section class="user-infor">
+<!-- <section class="user-infor">
   <div class="icon">
     <fa-icon icon="bell"></fa-icon>
   </div>
   <div class="icon" [triggerPopverMenu]="menu">
     <fa-icon icon="circle-user"></fa-icon>
   </div>
+</section> -->
+<section class="darkmode-toggle-container">
+  <input
+    type="checkbox"
+    hidden
+    id="darkmode"
+    [checked]="isDarkmode"
+    (change)="toggleDarkmode()"
+  />
+  <label for="darkmode" class="button"> </label>
 </section>
-
 <popover-menu #menu>
   <popover-menu-item>
     <fa-icon icon="ticket" prefix></fa-icon>
